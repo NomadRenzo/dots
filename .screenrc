@@ -1,0 +1,26 @@
+# read in screenrc
+
+# I don't need this apparently, as it loads automatically, don't know why I should used htis ever
+#source $HOME/.screenrc
+
+startup_message off
+#now start opening windows
+# open up initial screen to the top command
+
+# screen -t thetop top
+screen -t basescreen bash  
+defscrollback 5000
+vbell off
+autodetach on
+# randoms hit that is supposed to fix scrollback in putty
+termcapinfo xterm ti@:te@
+#binds
+# e, E, i, t, m, n, v, V - these are safe keys to bind
+bind e screen -t vim vim -S /root/dev/python/crawly/Session.vim
+bind E screen -t vim vim -S /root/dev/python/game/pro/Session.vim
+bind w screen -t bash bash
+bind } history
+bind v windowlist -b
+# i don't know how this is supposed to work, currently it just opens another bash...
+# bind , source "$HOME/.screenrc"
+
